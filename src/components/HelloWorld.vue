@@ -12,6 +12,27 @@
         el-row
             el-button(type="primary" round icon="el-icon-success" @click="isButtonDisabled") 是否可用
             el-button(type="danger" plain v-bind:disabled="isDisabled") 按钮
+        el-row
+            el-button-group
+                el-button(type="primary" icon="el-icon-share" size="small")
+                el-button(type="primary" icon="el-icon-delete" size="large")
+                el-button(type="primary" :loading="true") 加载中
+        el-row
+            el-select(v-model="selectedItem" multiple placeholder="请选择")
+                el-option(v-for="item in selectItems" 
+                :key="item.value"
+                :value="item.value"
+                :label="item.label"
+                )
+        el-row
+            el-switch(v-model="valueTrue" active-color="green" inactive-color="red"
+            )
+            span {{valueTrue ? '开' : '关'}}
+        el-row
+            el-table(:data="tableData" stripe)
+                el-table-column(prop="name" label="姓名")
+                el-table-column(prop="age" label="年龄")
+                el-table-column(prop="gender" label="性别")
 </template>
 
 <script>
@@ -19,9 +40,42 @@ export default {
     name: 'HelloWorld',
     data () {
         return {
-          msg: 'Welcome to Your Vue.js App',
-          visible: false,
-          isDisabled: false
+            msg: 'Welcome to Your Vue.js App',
+            visible: false,
+            isDisabled: false,
+            valueTrue: false,
+            selectedItem: ['2'],
+            selectItems: [
+                {
+                    label: '选项一',
+                    value: '1'
+                },
+                {
+                    label: '选项二',
+                    value: '2'
+                },
+                {
+                    label: '选项三',
+                    value: '3'
+                }
+            ],
+            tableData: [
+                {
+                    name: 'jack',
+                    age: 66,
+                    gender: 'male'
+                },
+                {
+                    name: 'lee',
+                    age: 13,
+                    gender: 'female'
+                },
+                {
+                    name: 'alex',
+                    age: 22,
+                    gender: 'male'
+                }
+            ]
         }
     },
     methods: {
@@ -37,7 +91,7 @@ export default {
 .element-ui-test{
     font-size: 18px;
     line-height: 20px;
-    .custom{
+    .el-row{
         margin: 10px 0;
         height: 40px;
         .el-col{
