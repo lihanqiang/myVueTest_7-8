@@ -27,6 +27,7 @@ export default {
 <style scoped lang="scss">
 .home-wrap{
 	height: 100%;
+	padding: 10px;
 	overflow: hidden;
 	text-align: center;
 	font-size: 30px;

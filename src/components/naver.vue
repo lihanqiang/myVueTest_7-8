@@ -39,7 +39,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss">
 .nav-wrap{
 	font-size: 14px;
 	border-radius: 5px;
@@ -58,6 +58,11 @@ export default {
 	.el-tree{
 		color: #fff;
 		background: transparent;
+		.el-tree-node__content, .el-tree-node__children, .el-tree-node{
+			&:hover, &:focus, &:active{
+				background: transparent;
+			}
+		}
 	}
 }
 </style>

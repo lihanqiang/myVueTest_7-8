@@ -2,6 +2,8 @@
 	div.error-wrap
 		span.flex
 		img(src="../assets/error/404.gif")
+		el-button(type="primary")
+			router-link(to="/home") 回到主页
 		span.flex
 </template>
 
@@ -29,6 +31,14 @@ export default {
 	img{
 		width: 40%;
 		margin: 0 auto;
+	}
+	.el-button{
+		width: 120px;
+		margin: 30px auto;
+		a{
+			color: #fff;
+			text-decoration: none;
+		}
 	}
 
 }
