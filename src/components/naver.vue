@@ -6,7 +6,7 @@
 
 <script>
 export default {
-	name: 'nav',
+	name: 'naver',
 	data () {
 		return{
 			treeData: [

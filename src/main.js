@@ -7,6 +7,7 @@ import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import axios from 'axios'
 import httpConf from '../config/http'
+import store from './store/state'
 
 Vue.config.productionTip = false
 
@@ -18,6 +19,7 @@ Vue.prototype.$http = axios
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
