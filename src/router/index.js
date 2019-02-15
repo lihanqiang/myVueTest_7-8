@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/components/login'
-import home from '@/components/home'
 import error from '@/components/error'
+import home from '@/views/home'
+import page1 from '@/views/page1'
+import page2 from '@/views/page2'
+
 
 Vue.use(Router)
 
@@ -28,6 +31,16 @@ const router = new Router({
 			path: '/error',
 			name: 'error',
 			component: error
+		},
+		{
+			path: '/page1',
+			name: 'page1',
+			component: page1
+		},
+		{
+			path: '/page2',
+			name: 'page2',
+			component: page2
 		}
 	]
 });

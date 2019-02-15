@@ -26,8 +26,8 @@ export default {
 			selectedItem: ['2'],
 			isLoading: false,
 			form: {
-				username: '',
-				password: ''
+				username: 'jack',
+				password: '123456'
 			},
 			rules: {
 				username: [

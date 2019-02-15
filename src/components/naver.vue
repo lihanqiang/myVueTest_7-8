@@ -1,7 +1,23 @@
 <template lang="pug">
 	div.nav-wrap
 		p.nav-name 导航栏
-		el-tree(:data="treeData" :props="defaultProps" @node-click="handleNodeClick")
+		el-menu(default-active="2"
+		class="el-menu-vertical-demo"
+		@open="handleOpen"
+		@close="handleClose")
+			el-submenu(index="1")
+				template(slot="title")
+					i.el-icon-location
+					span 导航一
+				el-menu-item-group
+					el-menu-item(index="1-1")
+						router-link(to="/page1") 页面1
+					el-menu-item(index="1-2")
+						router-link(to="/page2") 页面2
+			el-menu-item(index="2")
+				i.el-icon-menu
+				<span slot="title">导航二</span>
+		</el-menu>
 </template>
 
 <script>
@@ -9,31 +25,10 @@ export default {
 	name: 'naver',
 	data () {
 		return{
-			treeData: [
-				{
-		          	label: '一级 1',
-		          	children: [
-			          	{
-			            	label: '二级 1-1',
-			            	children: [
-			            		{
-			              			label: '三级 1-1-1'
-		            			}
-		            		]
-			          	}
-		          	]
-		        }
-	        ],
-	        defaultProps: {
-	          children: 'children',
-	          label: 'label'
-	        }
+			
 	    }
 	},
     methods: {
-      	handleNodeClick(data) {
-	        console.log(data);
-	    }
     }
 }
 </script>

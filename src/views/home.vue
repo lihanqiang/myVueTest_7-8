@@ -1,9 +1,6 @@
 <template lang="pug">
 	div.home-wrap
 		naver
-		p 这是主页啊,兄弟
-		el-input(v-model="count")
-		el-button(@click="add();") +
 </template>
 
 <script>
@@ -13,17 +10,12 @@ export default {
 	name: 'home',
 	data () {
 		return {
-			count: 0
 		}
 	},
 	components: {
 		naver
 	},
 	methods: {
-		add() {
-			this.$store.commit("increment");
-			console.log(this.count);
-		}
 	}
 }
 </script>
